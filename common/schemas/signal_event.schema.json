@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "required": ["signal_id", "ticker", "signal_type", "generated_at"],
+  "properties": {
+    "signal_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "ticker": {
+      "type": "string"
+    },
+    "signal_type": {
+      "type": "string",
+      "enum": ["BULLISH", "BEARISH", "HIGH_RISK"]
+    },
+    "sentiment_score": {
+      "type": "number"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "reason": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
